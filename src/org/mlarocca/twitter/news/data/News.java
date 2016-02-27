@@ -49,4 +49,20 @@ public class News {
      return "";
    }
  }
+ 
+ @Override
+ public int hashCode() {
+   return (content + url).hashCode();
+ }
+ 
+ @Override
+ public boolean equals(Object other) {
+   if (other == null ||
+       other.getClass() != this.getClass() ||
+       other.hashCode() != this.hashCode()) {
+     return false;
+   } else {
+     return true;
+   }
+ }
 }
